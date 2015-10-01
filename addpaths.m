@@ -1,0 +1,5 @@
+addpath('./Input_data')
+addpath('./FEEMD')
+addpath('./OI_check')
+addpath('./Significance')
+addpath('./HT')
