@@ -14,6 +14,12 @@ Requirements
 - [pymatbridge](https://github.com/arokem/python-matlab-bridge) (A simple Python => MATLAB(R) interface and a matlab magic for ipython)
 - [HHT MATLAB package](http://rcada.ncu.edu.tw/research1.htm) (Please run downloadHHTpackage.py first)
 
+Usage
+-----
+- Run downloadHHTpackage.py to download HHT MATLAB package.
+- For time series analysis: set the parameters in main1d.py and run it.
+- For image analysis: set the parameters in main2d.py and run it.
+- You can modify the plot functions in HHTplots.py.
 
 Important Links
 ---------------
