@@ -12,7 +12,7 @@ Requirements
 - Scipy
 - Matplotlib
 - [pymatbridge](https://github.com/arokem/python-matlab-bridge) (A simple Python => MATLAB(R) interface and a matlab magic for ipython)
-- [HHT MATLAB package]((http://rcada.ncu.edu.tw/research1.htm) (Please run downloadHHTpackage.py first)
+- [HHT MATLAB package](http://rcada.ncu.edu.tw/research1.htm) (Please run downloadHHTpackage.py first)
 
 
 Important Links
