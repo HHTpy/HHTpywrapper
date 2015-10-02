@@ -1,5 +1,3 @@
 addpath('./Input_data')
-addpath('./FEEMD')
-addpath('./OI_check')
-addpath('./Significance')
-addpath('./HT')
+addpath('./HHT_MATLAB_package')
+addpath('./HHT_MATLAB_package/FEEMD')

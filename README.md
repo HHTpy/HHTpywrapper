@@ -12,17 +12,13 @@ Requirements
 - Scipy
 - Matplotlib
 - [pymatbridge](https://github.com/arokem/python-matlab-bridge) (A simple Python => MATLAB(R) interface and a matlab magic for ipython)
+- [HHT MATLAB package]((http://rcada.ncu.edu.tw/research1.htm) (Please run downloadHHTpackage.py first)
 
-
-HHT MATLAB package
-------------------
-You can freely download the source codes of the package from [the website of Research Center for Adaptive Data Analysis](http://rcada.ncu.edu.tw/research1.htm). However, this package is already included in this repository.
 
 Important Links
 ---------------
 - [Research Center for Adaptive Data Analysis](http://rcada.ncu.edu.tw/intro.html)
 - [References of HHT](http://rcada.ncu.edu.tw/research1_clip_reference.htm)
-
 
 
 Authors
