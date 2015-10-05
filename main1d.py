@@ -1,6 +1,6 @@
 import numpy as np
 from pymatbridge import Matlab
-import hht_plots
+import HHTplots
 
 #  Parameters Setting
 filename = './Input_data/example_qpo.txt'
@@ -47,7 +47,7 @@ ifreq = np.transpose(fa[0])
 iamp = np.transpose(fa[1])
 
 # Plot Results
-hht_plots.example_qpo(time[4001:5000], amp[4001:5000], imfs[4001:5000, 3],
+HHTplots.example_qpo(time[4001:5000], amp[4001:5000], imfs[4001:5000, 3],
                       ifreq[4001:5000], iamp[4001:5000])
 
 mlab.stop()

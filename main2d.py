@@ -1,5 +1,5 @@
 from pymatbridge import Matlab
-import hht_plots
+import HHTplots
 
 #  Parameters Setting
 filename = './Input_data/example_lena.png'
@@ -27,6 +27,6 @@ res = mlab.run_func('meemd', filename, npixs, Nstd, NE, numImf, runCEEMD,
 imfs = res['result']
 
 # Plot Results
-hht_plots.example_lena(filename, imfs)
+HHTplots.example_lena(filename, imfs)
 
 mlab.stop()
