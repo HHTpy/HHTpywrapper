@@ -1,3 +1,5 @@
 addpath('./Input_data')
 addpath('./HHT_MATLAB_package')
-addpath('./HHT_MATLAB_package/FEEMD')
+addpath('./HHT_MATLAB_package/EMD')
+addpath('./HHT_MATLAB_package/checkIMFs')
+addpath('./HHT_MATLAB_package/HT')

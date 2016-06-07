@@ -22,19 +22,56 @@ Usage
 - For image analysis: set the parameters in main2d.py and run it.
 - You can modify the plot functions in HHTplots.py.
 
+Directory Structure
+-------------------
+- HHTpywrapper/ :
+
+  This is the root directory, including the directory of HHT MATLAB package and the Python API for using the MATLAB package. You need to run downloadHHTpackage.py first to download, extract and rearrange these HHT MATLAB files.
+
+- HHTpywrapper/Input_data/ :
+
+   You can put your input files in this directory.
+
+- HHTpywrapper/HHT_MATLAB_package/ :
+
+   This is the base directory of HHT MATLAB package. There are three subdirectories: EMD, checkIMFs and HT.
+
+- HHTpywrapper/HHT_MATLAB_package/EMD/ :
+
+   This directory collects MATLAB M-files for decomposing a signal into basis components (intrinsic mode functions, IMFs) defined by the signal itself. This adaptive decomposition method is called empirical mode decomposition (EMD). The M-files accomplished the most recently developed modified version of EMD, fast complementary ensemble empirical mode decomposition (CEEMD). Reference:
+     * [The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis](http://rcada.ncu.edu.tw/ref/reference002.pdf)
+     * [Ensemble Empirical Mode Decomposition: a noise-assisted data analysis method](http://rcada.ncu.edu.tw/ref/reference007.pdf)
+     * [On the computational complexity of the empirical mode decomposition algorithm](http://www.sciencedirect.com/science/article/pii/S0378437114000247)
+
+
+- HHTpywrapper/HHT_MATLAB_package/checkIMFs/ :
+
+   This directory collects MATLAB M-files for checking IMF properties, including significance, index of orthogonality, and excessive extrema value. Reference:
+   * [The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis](http://rcada.ncu.edu.tw/ref/reference002.pdf)
+   * [A confidence limit for the Empirical Mode Decomposition and Hilbert Spectral Analysis](http://rcada.ncu.edu.tw/ref/reference004.pdf)
+   * [A study of the characteristics of white noise using the empirical mode decomposition method](http://rcada.ncu.edu.tw/ref/reference006.pdf)
+   * [Ensemble Empirical Mode Decomposition: a noise-assisted data analysis method](http://rcada.ncu.edu.tw/ref/reference007.pdf)
+   * [On Intrinsic Mode Function](http://rcada.ncu.edu.tw/ref/reference013.pdf)
+
+
+- HHTpywrapper/HHT_MATLAB_package/HT/ :
+
+   This directory collects MATLAB M-files for calculating instantaneous amplitudes, phases and frequencies of IMFs. Reference:
+   * [The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis](http://rcada.ncu.edu.tw/ref/reference002.pdf)
+   * [On instantaneous frequency](http://rcada.ncu.edu.tw/ref/reference005.pdf)
+
 Important Links
 ---------------
 - [Research Center for Adaptive Data Analysis](http://rcada.ncu.edu.tw/intro.html)
 - [References of HHT](http://rcada.ncu.edu.tw/research1_clip_reference.htm)
 
 Other HHT-related Python Codes
----------------
+------------------------------
 - [PyHHT](https://github.com/jaidevd/pyhht) ; [PyHHT’s documentation](http://pyhht.readthedocs.io/en/latest/index.html) (by Jaidev Deshpande)
 - [pyeemd](http://pyeemd.readthedocs.io/en/latest/) (by Perttu Luukko)
 - [Python implementation of EMD/EEMD](https://laszukdawid.com/codes/) (by Dawid Laszuk)
 
 Authors
 -------
-
-* [Yi-Hao Su](https://github.com/YihaoSu) (yhsu@astro.ncu.edu.tw) <br>
+- [Yi-Hao Su](https://github.com/YihaoSu) (yhsu@astro.ncu.edu.tw) <br>
 HHTpywrapper is my project during the [Astro Hack Week 2015](http://astrohackweek.github.io/). Welcome any contributions and suggestions!
