@@ -14,6 +14,7 @@ Requirements
 - [pymatbridge](https://github.com/arokem/python-matlab-bridge) (A simple Python => MATLAB(R) interface and a matlab magic for ipython)
 - [HHT MATLAB package](http://rcada.ncu.edu.tw/research1.htm) (Please run downloadHHTpackage.py first)
 - [pyunpack](https://pypi.python.org/pypi/pyunpack) and [patool](http://wummel.github.io/patool/) (For extracting the .zip/.rar HHT MATLAB package files)
+- UNZIP and UNRAR (sudo apt-get install unzip unrar)
 
 Usage
 -----
