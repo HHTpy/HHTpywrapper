@@ -100,4 +100,7 @@ setup(name=NAME,
       url='https://github.com/HHTpy/HHTpywrapper',
       long_description='hhtpywrapper is a python interface to call Hilbert–Huang Transform MATLAB package',
       zip_safe=False,
+      package_data={
+        'hhtpywrapper': ['HHT_MATLAB_package/*','addpaths.m'],
+      },
 )
