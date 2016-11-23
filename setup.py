@@ -10,18 +10,6 @@ NAME = 'hhtpywrapper'
 # VERSION should be PEP440 compatible (https://www.python.org/dev/peps/pep-0440/)
 VERSION = '0.0.dev1'
 
-setup(name=NAME,
-      version=VERSION,
-      description='Python Wrapper for Hilbert–Huang Transform MATLAB Package',
-      install_requires=['numpy', 'scipy', 'matplotlib', 'pymatbridge', 'pyunpack', 'patool'],
-      author='Yi-Hao Su',
-      author_email='yhsu@astro.ncu.edu.tw',
-      license='MIT',
-      packages=find_packages(),
-      url='https://github.com/HHTpy/HHTpywrapper',
-      long_description='hhtpywrapper is a python interface to call Hilbert–Huang Transform MATLAB package',
-)
-
 # Define base paths for directories and create directories
 HHT_MATLAB_package_root = './hhtpywrapper/HHT_MATLAB_package/'
 EMD_dir = HHT_MATLAB_package_root + 'EMD/'
@@ -100,3 +88,16 @@ if int(version[0]) >= 8:
     print('...Done.')
 
 print('* All done.')
+
+setup(name=NAME,
+      version=VERSION,
+      description='Python Wrapper for Hilbert–Huang Transform MATLAB Package',
+      install_requires=['numpy', 'scipy', 'matplotlib', 'pymatbridge', 'pyunpack', 'patool'],
+      author='Yi-Hao Su',
+      author_email='yhsu@astro.ncu.edu.tw',
+      license='MIT',
+      packages=find_packages(),
+      url='https://github.com/HHTpy/HHTpywrapper',
+      long_description='hhtpywrapper is a python interface to call Hilbert–Huang Transform MATLAB package',
+      zip_safe=False,
+)
