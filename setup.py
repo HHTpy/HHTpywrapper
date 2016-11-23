@@ -23,7 +23,7 @@ setup(name=NAME,
 )
 
 # Define base paths for directories and create directories
-HHT_MATLAB_package_root = './HHT_MATLAB_package/'
+HHT_MATLAB_package_root = './hhtpywrapper/HHT_MATLAB_package/'
 EMD_dir = HHT_MATLAB_package_root + 'EMD/'
 HT_dir = HHT_MATLAB_package_root + 'HT/'
 checkIMFs_dir = HHT_MATLAB_package_root + 'checkIMFs/'
