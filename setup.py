@@ -101,6 +101,8 @@ setup(name=NAME,
       long_description='hhtpywrapper is a python interface to call Hilbert–Huang Transform MATLAB package',
       zip_safe=False,
       package_data={
-        'hhtpywrapper': ['HHT_MATLAB_package/*','addpaths.m'],
+        'hhtpywrapper': ['HHT_MATLAB_package/EMD/*', 'HHT_MATLAB_package/checkIMFs/*',
+                         'HHT_MATLAB_package/HT/*', 'Input_data/*',
+                         'addpaths.m', 'examples.ipynb'],
       },
 )
