@@ -20,11 +20,11 @@ Installation
 ------------
 1. Clone this project from GitHub:
 
-       $ git clone https://github.com/HHTpy/HHTpywrapper.git
+        $ git clone https://github.com/HHTpy/HHTpywrapper.git
 
 2. In the project directory, install required packages:
 
-       $ pip install -r requirements.txt
+        $ pip install -r requirements.txt
 
 3. In the project directory, execute:
 
