@@ -92,7 +92,7 @@ print('* All done.')
 setup(name=NAME,
       version=VERSION,
       description='Python Wrapper for Hilbert–Huang Transform MATLAB Package',
-      install_requires=['numpy', 'scipy', 'matplotlib', 'pymatbridge', 'pyunpack', 'patool'],
+      install_requires=['numpy', 'scipy', 'matplotlib'],
       author='Yi-Hao Su',
       author_email='yhsu@astro.ncu.edu.tw',
       license='MIT',
