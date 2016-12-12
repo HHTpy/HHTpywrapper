@@ -1,9 +1,13 @@
 from pymatbridge import Matlab
+import os
 
 mlab = Matlab()
 mlab.start()
-mlab.run_code('addpaths')
-
+dir_path = os.path.dirname(os.path.realpath(__file__))
+dir_list = ['/Input_data', '/HHT_MATLAB_package', '/HHT_MATLAB_package/EMD',
+          '/HHT_MATLAB_package/checkIMFs', '/HHT_MATLAB_package/HT']
+for d in dir_list:
+    res = mlab.run_func('addpath', dir_path + d)
 
 class EMD():
     def __init__(self, signal, Nstd, NE, num_imf=10, run_CEEMD=1, max_sift=10,
