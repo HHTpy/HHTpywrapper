@@ -9,11 +9,15 @@ dir_list = ['/Input_data', '/HHT_MATLAB_package', '/HHT_MATLAB_package/EMD',
 for d in dir_list:
     res = mlab.run_func('addpath', dir_path + d)
 
-class EMD():
+class EEMD():
     def __init__(self, signal, Nstd, NE, num_imf=10, run_CEEMD=1, max_sift=10,
                  type_spline=2, modify_BC=1, rand_type=2, seed_no=1,
-                 check_signal=1):
-        res = mlab.run_func('feemd_post_pro', signal, Nstd, NE, num_imf,
+                 check_signal=1, post_processing=True):
+        if post_processing == True:
+            eemd = 'feemd_post_pro'
+        else:
+            eemd = 'eemd'
+        res = mlab.run_func(eemd, signal, Nstd, NE, num_imf,
                             run_CEEMD, max_sift, type_spline, modify_BC,
                             rand_type, seed_no, check_signal)
         self.imfs = res['result']
