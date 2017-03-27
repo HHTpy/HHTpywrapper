@@ -20,11 +20,15 @@ class EEMD():
         res = mlab.run_func(eemd, signal, Nstd, NE, num_imf,
                             run_CEEMD, max_sift, type_spline, modify_BC,
                             rand_type, seed_no, check_signal)
-        self.imfs = res['result']
+        if post_processing == True:
+            self.imfs = res['result'].T
+        else:
+            self.imfs = res['result']
+
 
     def get_oi(self):
-        oi = mlab.run_func('ratio1', self.imfs)
-        oi_pair = mlab.run_func('ratioa', self.imfs)
+        oi = mlab.run_func('ratio1', self.imfs.T)
+        oi_pair = mlab.run_func('ratioa', self.imfs.T)
         oi_dic = {'Non-orthogonal leakage of components': oi['result'],
                   'Non-orthogonal leakage for pair of adjoining components': oi_pair['result']}
         return oi_dic
