@@ -12,7 +12,7 @@ for d in dir_list:
 class EEMD():
     def __init__(self, signal, Nstd, NE, num_imf=10, run_CEEMD=1, max_sift=10,
                  type_spline=2, modify_BC=1, rand_type=2, seed_no=1,
-                 check_signal=1, post_processing=True):
+                 check_signal=1, post_processing=False):
         if post_processing == True:
             eemd = 'feemd_post_pro'
         else:
