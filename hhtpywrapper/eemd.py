@@ -1,4 +1,5 @@
 from pymatbridge import Matlab
+import matplotlib.pylab as plt
 import os
 
 mlab = Matlab()
@@ -24,7 +25,8 @@ class EEMD():
             self.imfs = res['result'].T
         else:
             self.imfs = res['result']
-
+        self.input_signal = signal
+        self.num_imf = num_imf
 
     def get_oi(self):
         oi = mlab.run_func('ratio1', self.imfs.T)
@@ -32,3 +34,13 @@ class EEMD():
         oi_dic = {'Non-orthogonal leakage of components': oi['result'],
                   'Non-orthogonal leakage for pair of adjoining components': oi_pair['result']}
         return oi_dic
+
+    def plot_imfs(self, time):
+        num_subplot = self.num_imf + 1
+        plt.figure()
+        plt.subplot(num_subplot, 1, 1)
+        plt.plot(time, self.input_signal)
+        for i in range(self.num_imf):
+            plt.subplot(num_subplot, 1, i + 2)
+            plt.plot(time, self.imfs[i])
+        plt.show()
