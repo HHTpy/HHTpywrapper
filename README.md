@@ -30,14 +30,14 @@ Installation
 
         $ python setup.py install
 
-Usage
+Usage (To be rewritten)
 -----
-- Run downloadHHTpackage.py to download HHT MATLAB package.
-- For time series analysis: set the parameters in main1d.py and run it.
-- For image analysis: set the parameters in main2d.py and run it.
-- You can modify the plot functions in HHTplots.py.
+- ~~Run downloadHHTpackage.py to download HHT MATLAB package.~~
+- ~~For time series analysis: set the parameters in main1d.py and run it.~~
+- ~~For image analysis: set the parameters in main2d.py and run it.~~
+- ~~You can modify the plot functions in HHTplots.py.~~
 
-Directory Structure
+Directory Structure (To be rewritten)
 -------------------
 - HHTpywrapper/ :
 
