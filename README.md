@@ -88,4 +88,4 @@ Other HHT-related Python Codes
 Authors
 -------
 - [Yi-Hao Su](https://github.com/YihaoSu) (yhsu@astro.ncu.edu.tw) <br>
-HHTpywrapper is my project during the [Astro Hack Week 2015](https://github.com/AstroHackWeek/AstroHackWeek2015/). Welcome any contributions and suggestions!
+HHTpywrapper is my project during the [Astro Hack Week 2015](https://github.com/AstroHackWeek/AstroHackWeek2015/). It is currently in development phase. Welcome any contributions and feedbacks!
