@@ -45,7 +45,6 @@ os.remove(EMD_dir + 'BFVL.mat')
 
 # Rearrange files
 shutil.move(HHT_MATLAB_package_root + 'feemd_post_pro.m', EMD_dir)
-shutil.move(HHT_MATLAB_package_root + 'meemd.m', EMD_dir)
 shutil.move('Matlab_runcode/eemd_old.m', EMD_dir)
 
 checkIMFs_mfile_list = ['ratio1.m', 'ratioa.m', 'findEEfsp.m', 'findEE.m',
