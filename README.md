@@ -39,21 +39,18 @@ Examples of Package Usage
 - [Example of reproducing HHT analysis results in Su et al. 2017](https://github.com/HHTpy/HHTpywrapper/blob/master/notebooks/example_Su_etal2017.ipynb)
 - Example of characterizing intermittency of an intermittent, frequency varying oscillation (To be added)
 
-Directory Structure (To be rewritten)
+Directory Structure
 -------------------
-- HHTpywrapper/ :
+After finishing the installation, you can see the below directory structure:
+- /Your Python site-packages path/hhtpywrapper/ :
 
-  This is the root directory, including the directory of HHT MATLAB package and the Python API for using the MATLAB package. You need to run downloadHHTpackage.py first to download, extract and rearrange these HHT MATLAB files.
+  This is the root directory of the package, including the directory of HHT MATLAB package and the Python API for calling the MATLAB package (eemd.py and hsa.py).
 
-- HHTpywrapper/Input_data/ :
-
-   You can put your input files in this directory.
-
-- HHTpywrapper/HHT_MATLAB_package/ :
+- /Your Python site-packages path/hhtpywrapper/HHT_MATLAB_package/ :
 
    This is the base directory of HHT MATLAB package. There are three subdirectories: EMD, checkIMFs and HT.
 
-- HHTpywrapper/HHT_MATLAB_package/EMD/ :
+- /Your Python site-packages path/hhtpywrapper/HHT_MATLAB_package/EMD/ :
 
    This directory collects MATLAB M-files for decomposing a signal into basis components (intrinsic mode functions, IMFs) defined by the signal itself. This adaptive decomposition method is called empirical mode decomposition (EMD). The M-files accomplished the most recently developed modified version of EMD, fast complementary ensemble empirical mode decomposition (CEEMD). Reference:
      * [The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis](http://rcada.ncu.edu.tw/ref/reference002.pdf)
@@ -61,7 +58,7 @@ Directory Structure (To be rewritten)
      * [On the computational complexity of the empirical mode decomposition algorithm](http://www.sciencedirect.com/science/article/pii/S0378437114000247)
 
 
-- HHTpywrapper/HHT_MATLAB_package/checkIMFs/ :
+- /Your Python site-packages path/hhtpywrapper/HHT_MATLAB_package/checkIMFs/ :
 
    This directory collects MATLAB M-files for checking IMF properties, including significance, index of orthogonality, and excessive extrema value. Reference:
    * [The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis](http://rcada.ncu.edu.tw/ref/reference002.pdf)
@@ -71,7 +68,7 @@ Directory Structure (To be rewritten)
    * [On Intrinsic Mode Function](http://rcada.ncu.edu.tw/ref/reference013.pdf)
 
 
-- HHTpywrapper/HHT_MATLAB_package/HT/ :
+- /Your Python site-packages path/hhtpywrapper/HHT_MATLAB_package/HT/ :
 
    This directory collects MATLAB M-files for calculating instantaneous amplitudes, phases and frequencies of IMFs. Reference:
    * [The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis](http://rcada.ncu.edu.tw/ref/reference002.pdf)
