@@ -13,9 +13,9 @@ Requirements
 - MATLAB
 - Numpy
 - Scipy
+- Astropy
 - Matplotlib
 - [pymatbridge](https://github.com/arokem/python-matlab-bridge) (A simple Python => MATLAB(R) interface and a matlab magic for ipython)
-- [HHT MATLAB package](http://rcada.ncu.edu.tw/research1.htm)
 - [pyunpack](https://pypi.python.org/pypi/pyunpack) and [patool](http://wummel.github.io/patool/) (For extracting the .zip/.rar HHT MATLAB package files)
 - UNZIP and UNRAR (sudo apt-get install unzip unrar)
 
@@ -33,12 +33,11 @@ Installation
 
         $ python setup.py install
 
-Usage (To be rewritten)
+Examples of Package Usage
 -----
-- ~~Run downloadHHTpackage.py to download HHT MATLAB package.~~
-- ~~For time series analysis: set the parameters in main1d.py and run it.~~
-- ~~For image analysis: set the parameters in main2d.py and run it.~~
-- ~~You can modify the plot functions in HHTplots.py.~~
+- [Example of reproducing HHT analysis results in Su et al. 2015](https://github.com/HHTpy/HHTpywrapper/blob/master/notebooks/example_Su_etal2015.ipynb)
+- [Example of reproducing HHT analysis results in Su et al. 2017](https://github.com/HHTpy/HHTpywrapper/blob/master/notebooks/example_Su_etal2017.ipynb)
+- Example of characterizing intermittency of an intermittent, frequency varying oscillation (To be added)
 
 Directory Structure (To be rewritten)
 -------------------
@@ -80,7 +79,7 @@ Directory Structure (To be rewritten)
 
 Important Links
 ---------------
-- [Research Center for Adaptive Data Analysis](http://rcada.ncu.edu.tw/intro.html)
+- [HHT MATLAB package](http://rcada.ncu.edu.tw/research1.htm)
 - [References of HHT](http://rcada.ncu.edu.tw/research1_clip_reference.htm)
 
 Other HHT-related Python Codes
