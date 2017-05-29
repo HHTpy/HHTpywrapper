@@ -8,7 +8,7 @@ from pymatbridge import Matlab
 NAME = 'hhtpywrapper'
 
 # VERSION should be PEP440 compatible (https://www.python.org/dev/peps/pep-0440/)
-VERSION = '0.0.dev1'
+VERSION = '0.1.dev'
 
 # Define base paths for directories and create directories
 HHT_MATLAB_package_root = './hhtpywrapper/HHT_MATLAB_package/'
