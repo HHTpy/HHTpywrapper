@@ -2,3 +2,4 @@ astropy
 pymatbridge>=0.5.2
 pyunpack>=0.1.1
 patool>=1.12
+pyzmq
