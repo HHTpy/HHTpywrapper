@@ -44,3 +44,28 @@ class EEMD():
             plt.subplot(num_subplot, 1, i + 2)
             plt.plot(time, self.imfs[i])
         plt.show()
+
+    def plot_imfs_significance(self, imfs, savefig_name=''):
+        n_imf, n_pt = imfs.shape
+        if n_pt < n_imf:
+            imfs = imfs.T
+            n_imf, n_pt = imfs.shape
+        res_logep = mlab.run_func('significanceIMF', imfs[:-1].T)
+        logep = res_logep['result']
+        mlab.run_code('sigline90=confidenceLine(0.10,' + str(n_pt) + ');' +
+                      'sigline95=confidenceLine(0.05,' + str(n_pt) + ');' +
+                      'sigline99=confidenceLine(0.01,' + str(n_pt) + ');')
+        sigline90 = mlab.get_variable('sigline90')
+        sigline95 = mlab.get_variable('sigline95')
+        sigline99 = mlab.get_variable('sigline99')
+        plt.plot(sigline90[:,0], sigline90[:,1], 'k',
+                 sigline95[:,0], sigline95[:,1], 'b',
+                 sigline99[:,0], sigline99[:,1], 'r')
+        plt.legend(('90% significance', '95% significance', '99% significance'), loc=3)
+        plt.plot(logep[:,0], logep[:,1], 'g.')
+        plt.xlabel('Log-T, Period of the IMFs (log)')
+        plt.ylabel('Log-E, Energy of the IMFs (log)')
+        if savefig_name == '':
+            plt.show()
+        else:
+            plt.savefig(savefig_name, format='eps', dpi=1000)
