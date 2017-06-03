@@ -6,8 +6,8 @@ import numpy as np
 mlab = Matlab()
 mlab.start()
 dir_path = os.path.dirname(os.path.realpath(__file__))
-dir_list = ['/Input_data', '/HHT_MATLAB_package', '/HHT_MATLAB_package/EMD',
-          '/HHT_MATLAB_package/checkIMFs', '/HHT_MATLAB_package/HT']
+dir_list = ['/HHT_MATLAB_package', '/HHT_MATLAB_package/EEMD',
+          '/HHT_MATLAB_package/checkIMFs', '/HHT_MATLAB_package/HSA']
 for d in dir_list:
     res = mlab.run_func('addpath', dir_path + d)
 
