@@ -50,9 +50,9 @@ After finishing the installation, you can see the below directory structure:
 
 - /Your Python site-packages path/hhtpywrapper/HHT_MATLAB_package/ :
 
-   This is the base directory of HHT MATLAB package. There are three subdirectories: EMD, checkIMFs and HT.
+   This is the base directory of HHT MATLAB package. There are three subdirectories: EEMD, checkIMFs and HSA.
 
-- /Your Python site-packages path/hhtpywrapper/HHT_MATLAB_package/EMD/ :
+- /Your Python site-packages path/hhtpywrapper/HHT_MATLAB_package/EEMD/ :
 
    This directory collects MATLAB M-files for decomposing a signal into basis components (intrinsic mode functions, IMFs) defined by the signal itself. This adaptive decomposition method is called empirical mode decomposition (EMD). The M-files accomplished the most recently developed modified version of EMD, fast complementary ensemble empirical mode decomposition (CEEMD). Reference:
      * [The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis](http://rcada.ncu.edu.tw/ref/reference002.pdf)
@@ -70,9 +70,9 @@ After finishing the installation, you can see the below directory structure:
    * [On Intrinsic Mode Function](http://rcada.ncu.edu.tw/ref/reference013.pdf)
 
 
-- /Your Python site-packages path/hhtpywrapper/HHT_MATLAB_package/HT/ :
+- /Your Python site-packages path/hhtpywrapper/HHT_MATLAB_package/HSA/ :
 
-   This directory collects MATLAB M-files for calculating instantaneous amplitudes, phases and frequencies of IMFs. Reference:
+   This directory collects MATLAB M-files for calculating instantaneous amplitudes, phases and frequencies of IMFs (that is, the Hilbert Spectral Analysis, HSA). Reference:
    * [The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis](http://rcada.ncu.edu.tw/ref/reference002.pdf)
    * [On instantaneous frequency](http://rcada.ncu.edu.tw/ref/reference005.pdf)
 

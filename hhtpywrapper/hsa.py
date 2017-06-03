@@ -15,5 +15,5 @@ class HSA():
     def __init__(self, imfs, dt, ifmethod='hilbtm', normmethod='pchip', nfilter=0):
         fa_res = mlab.run_func('fa', imfs, dt, ifmethod, normmethod, nfilter, nargout=2)
         fa = fa_res['result']
-        self.ifreq = np.transpose(fa[0])
-        self.iamp = np.transpose(fa[1])
+        self.ifreq = fa[0].T.reshape(-1)
+        self.iamp = fa[1].T.reshape(-1)
