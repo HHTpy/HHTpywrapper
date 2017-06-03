@@ -11,7 +11,7 @@ for d in dir_list:
     res = mlab.run_func('addpath', dir_path + d)
 
 class EEMD():
-    def __init__(self, signal, Nstd, NE, num_imf=10, run_CEEMD=1, max_sift=10,
+    def __init__(self, signal, Nstd, NE, num_imf=0, run_CEEMD=1, max_sift=10,
                  type_spline=2, modify_BC=1, rand_type=2, seed_no=1,
                  check_signal=1, post_processing=False):
         if post_processing == True:
@@ -26,7 +26,7 @@ class EEMD():
         else:
             self.imfs = res['result']
         self.input_signal = signal
-        self.num_imf = num_imf
+        self.num_imf = len(self.imfs)
 
     def get_oi(self):
         oi = mlab.run_func('ratio1', self.imfs.T)
