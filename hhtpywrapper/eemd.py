@@ -42,15 +42,33 @@ class EEMD():
                   'Non-orthogonal leakage for pair of adjoining components': oi_pair['result']}
         return oi_dic
 
-    def plot_imfs(self, time):
+    def plot_imfs(self, time, tstart=None, tend=None, tunit='s', savefig_name=''):
+        time = time - time[0]
+        dt = time[1] - time[0]
+        if tstart != None:
+            tstart = int(np.fix(tstart / dt))
+        if tend != None:
+            tend = int(np.fix(tend / dt))
         num_subplot = self.num_imf + 1
-        plt.figure()
-        plt.subplot(num_subplot, 1, 1)
-        plt.plot(time, self.input_signal)
-        for i in range(self.num_imf):
-            plt.subplot(num_subplot, 1, i + 2)
-            plt.plot(time, self.imfs[:,i])
-        plt.show()
+        fig = plt.figure()
+        ax = fig.add_subplot(num_subplot, 1, 1)
+        ax.plot(time[tstart:tend], self.input_signal[tstart:tend])
+        ax.set_ylabel('Data')
+        ax.get_yaxis().set_label_coords(-0.1,0.5)
+        for i in range(self.num_imf - 1):
+            ax = fig.add_subplot(num_subplot, 1, i + 2)
+            ax.plot(time[tstart:tend], self.imfs[:,i][tstart:tend])
+            ax.set_ylabel(r'$C_{' + str(i + 1) + '}$')
+            ax.get_yaxis().set_label_coords(-0.1,0.5)
+        ax = fig.add_subplot(num_subplot, 1, num_subplot)
+        ax.plot(time[tstart:tend], self.imfs[:,-1][tstart:tend])
+        ax.get_yaxis().set_label_coords(-0.1,0.5)
+        ax.set_ylabel('Trend')
+        ax.set_xlabel('Time (' + tunit + ')')
+        if savefig_name == '':
+            plt.show()
+        else:
+            plt.savefig(savefig_name, format='eps', dpi=1000)
 
     def plot_imfs_significance(self, imfs, savefig_name=''):
         n_pt, n_imf = imfs.shape
