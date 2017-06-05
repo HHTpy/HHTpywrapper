@@ -18,8 +18,14 @@ class HSA():
         self.imfs = imfs
         self.ifmethod = ifmethod
         self.normmethod = normmethod
-        self.ifreq = fa[0]
-        self.iamp = fa[1]
+        if len(fa[0]) != 1:
+            ifreq = fa[0]
+            iamp = fa[1]
+        else:
+            ifreq = fa[0].T
+            iamp = fa[1].T
+        self.ifreq = ifreq
+        self.iamp = iamp
 
     def plot_hs(self, time, trange, frange, tres, fres, hsize, sigma,
                 tunit='s', funit='Hz', colorbar = 'energy', savefig_name=''):
