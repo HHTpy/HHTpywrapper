@@ -1,19 +1,12 @@
-from pymatbridge import Matlab
 import matplotlib.pylab as plt
-import os
 import numpy as np
+import hhtpywrapper.matlab as matlab
 
-mlab = Matlab()
-mlab.start()
-dir_path = os.path.dirname(os.path.realpath(__file__))
-dir_list = ['/HHT_MATLAB_package', '/HHT_MATLAB_package/EEMD',
-          '/HHT_MATLAB_package/checkIMFs', '/HHT_MATLAB_package/HSA']
-for d in dir_list:
-    res = mlab.run_func('addpath', dir_path + d)
 
 class HSA():
     def __init__(self, imfs, dt, ifmethod='hilbtm', normmethod='pchip', nfilter=0):
-        fa_res = mlab.run_func('fa', imfs, dt, ifmethod, normmethod, nfilter, nargout=2)
+        self.mlab = matlab.start_mlab()
+        fa_res = self.mlab.run_func('fa', imfs, dt, ifmethod, normmethod, nfilter, nargout=2)
         fa = fa_res['result']
         self.imfs = imfs
         self.ifmethod = ifmethod
@@ -38,16 +31,16 @@ class HSA():
             runfunc = 'nnspa'
         elif colorbar == 'energy':
             runfunc = 'nnspe'
-        res_nnspe = mlab.run_func(runfunc, self.imfs, time[0], time[-1], fres, tres,
+        res_nnspe = self.mlab.run_func(runfunc, self.imfs, time[0], time[-1], fres, tres,
                                   fstart, fend, tstart, tend, self.ifmethod,
                                   self.normmethod, 0, 0, nargout=3)
         nt = res_nnspe['result'][0]
         tscale = res_nnspe['result'][1].reshape(-1)
         fscale = res_nnspe['result'][2].reshape(-1)
-        res_fspecial = mlab.run_func('fspecial', 'gaussian', hsize, sigma)
+        res_fspecial = self.mlab.run_func('fspecial', 'gaussian', hsize, sigma)
         q = res_fspecial['result']
-        res_filter2 = mlab.run_func('filter2', q, nt)
-        res_nsu = mlab.run_func('filter2', q, res_filter2['result'])
+        res_filter2 = self.mlab.run_func('filter2', q, nt)
+        res_nsu = self.mlab.run_func('filter2', q, res_filter2['result'])
         nsu = res_nsu['result']
         fig = plt.figure()
         ax = plt.axes()
