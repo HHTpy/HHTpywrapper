@@ -21,11 +21,11 @@ os.mkdir(checkIMFs_dir)
 
 # Download and extract the HHT MATLAB package from the RCADA website
 print('* Downloading & extracting the HHT MATLAB package...')
-urllib.request.urlretrieve('http://rcada.ncu.edu.tw/FEEMD.rar', 'EEMD.rar')
+urllib.request.urlretrieve('http://rcada.ncu.edu.tw/FEEMD.zip', 'EEMD.zip')
 urllib.request.urlretrieve('http://rcada.ncu.edu.tw/Matlab%20runcode.zip',
                            'Matlab_runcode.zip')
 Archive('Matlab_runcode.zip').extractall('./')
-Archive('EEMD.rar').extractall(HHT_MATLAB_package_root)
+Archive('EEMD.zip',backend='zipfile').extractall(EEMD_dir,auto_create_dir=True)
 print('...Done.')
 
 # Rename directories/files & delete unnecessary files
@@ -33,7 +33,6 @@ print('* Rearranging directories & files...')
 os.rename('Matlab runcode', 'Matlab_runcode')
 os.rename('Matlab_runcode/eemd.m', 'Matlab_runcode/eemd_old.m')
 os.rename('Matlab_runcode/FAimphilbert.m', 'Matlab_runcode/FAimpHilbert.m')
-os.rename(HHT_MATLAB_package_root + 'FEEMD', EEMD_dir)
 os.remove('Matlab_runcode/endprocess1.p')
 os.remove('Matlab_runcode/ex02d.m')
 os.remove('Matlab_runcode/LOD78.csv')
@@ -58,7 +57,7 @@ for files in HSA_mfile_list:
     shutil.move('./Matlab_runcode/' + files, HSA_dir)
 
 # Delete unnecessary directories/files
-os.remove('EEMD.rar')
+os.remove('EEMD.zip')
 os.remove('Matlab_runcode.zip')
 os.rmdir('Matlab_runcode')
 print('...Done.')
@@ -79,7 +78,7 @@ if int(version[0]) >= 8:
     with open(EEMD_dir + 'eemd.m', 'r', encoding='iso-8859-1') as infile:
             data = infile.read().replace('getDefaultStream', 'getGlobalStream')
     infile.close()
-    with open(EEMD_dir + 'eemd2.m', 'w') as outfile:
+    with open(EEMD_dir + 'eemd2.m', 'w',encoding='iso-8859-1') as outfile:
         outfile.write(data)
     outfile.close()
     os.remove(EEMD_dir + 'eemd.m')
