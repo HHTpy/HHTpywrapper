@@ -21,11 +21,11 @@ os.mkdir(checkIMFs_dir)
 
 # Download and extract the HHT MATLAB package from the RCADA website
 print('* Downloading & extracting the HHT MATLAB package...')
-urllib.request.urlretrieve('http://rcada.ncu.edu.tw/FEEMD.zip', 'EEMD.zip')
-urllib.request.urlretrieve('http://rcada.ncu.edu.tw/Matlab%20runcode.zip',
+urllib.request.urlretrieve('http://in.ncu.edu.tw/ncu34951/FEEMD.rar', 'EEMD.rar')
+urllib.request.urlretrieve('http://in.ncu.edu.tw/ncu34951/Matlab_runcode.zip',
                            'Matlab_runcode.zip')
 Archive('Matlab_runcode.zip').extractall('./')
-Archive('EEMD.zip',backend='zipfile').extractall(EEMD_dir,auto_create_dir=True)
+Archive('EEMD.rar').extractall(EEMD_dir, auto_create_dir=True)
 print('...Done.')
 
 # Rename directories/files & delete unnecessary files
@@ -57,7 +57,7 @@ for files in HSA_mfile_list:
     shutil.move('./Matlab_runcode/' + files, HSA_dir)
 
 # Delete unnecessary directories/files
-os.remove('EEMD.zip')
+os.remove('EEMD.rar')
 os.remove('Matlab_runcode.zip')
 os.rmdir('Matlab_runcode')
 print('...Done.')
