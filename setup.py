@@ -44,6 +44,7 @@ os.remove(EEMD_dir + 'example_eemd.m')
 os.remove(EEMD_dir + 'BFVL.mat')
 
 # Rearrange files
+shutil.move('./hhtpywrapper/rcada_emd.mexa64', EEMD_dir)
 shutil.move('Matlab_runcode/eemd_old.m', EEMD_dir)
 
 checkIMFs_mfile_list = ['ratio1.m', 'ratioa.m', 'findEEfsp.m', 'findEE.m',
