@@ -8,7 +8,7 @@ class EEMD():
                  type_spline=2, modify_BC=1, rand_type=2, seed_no=1,
                  check_signal=1, post_processing=False):
         self.mlab = matlab.start_mlab()
-        res = self.mlab.run_func('eemd', signal, Nstd, NE, num_imf,
+        res = self.mlab.run_func('rcada_eemd', signal, Nstd, NE, num_imf,
                             run_CEEMD, max_sift, type_spline, modify_BC,
                             rand_type, seed_no, check_signal)
         allmode = res['result'].T
@@ -17,7 +17,7 @@ class EEMD():
             imfs = np.zeros((len(signal), num_imf))
             remainder = 0
             for i in range(num_imf-1):
-                res2 = self.mlab.run_func('eemd', allmode[:,i] + remainder, 0, 1, num_imf)
+                res2 = self.mlab.run_func('rcada_eemd', allmode[:,i] + remainder, 0, 1, num_imf)
                 imfs_temp = res2['result'].T
                 imfs[:,i] = imfs_temp[:,0]
                 remainder = allmode[:,i] + remainder - imfs[:,i]

@@ -75,14 +75,14 @@ if int(version[0]) >= 8:
     print('The function "getDefaultStream" in eemd.m is no longer be used ' +
           'in your MATLAB version.')
     print('* Replacing it with the function "getGlobalStream"...')
-    with open(EEMD_dir + 'eemd.m', 'r', encoding='iso-8859-1') as infile:
+    with open(EEMD_dir + 'rcada_eemd.m', 'r', encoding='iso-8859-1') as infile:
             data = infile.read().replace('getDefaultStream', 'getGlobalStream')
     infile.close()
-    with open(EEMD_dir + 'eemd2.m', 'w',encoding='iso-8859-1') as outfile:
+    with open(EEMD_dir + 'rcada_eemd2.m', 'w',encoding='iso-8859-1') as outfile:
         outfile.write(data)
     outfile.close()
-    os.remove(EEMD_dir + 'eemd.m')
-    os.rename(EEMD_dir + 'eemd2.m', EEMD_dir + 'eemd.m')
+    os.remove(EEMD_dir + 'rcada_eemd.m')
+    os.rename(EEMD_dir + 'rcada_eemd2.m', EEMD_dir + 'rcada_eemd.m')
     print('...Done.')
 
 print('* All done.')
